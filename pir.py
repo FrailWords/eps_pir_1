@@ -1,5 +1,20 @@
 #!/usr/bin/python
 
+"""
+Basic Two Server Scheme -
+
+very simple PIR scheme that allows user to privately obtain the bit x_i by receiving a single bit from each of two servers
+
+1. select random set
+2. send set to server 1
+3. send set XOR i to server 2
+4. servers respond with bits of index specified by set.
+5. all the XORs cancel out except for the bit i
+6. server is only sent a single bit back
+7. user sends [n] items though, so not better communication yet
+"""
+
+
 import random
 import math
 import numpy as np
@@ -58,7 +73,7 @@ print("Database DB1 (and DB2) in %sx%s format: " % (sq_n, sq_n))
 for i in DB1:
     print(inline_print(i))
 
-# Random query Z1 made to DB1
+# Random query Z1 made to DB1 - Step 1 & 2
 Z1 = [random_bit() for i in range(sq_n)]
 
 print("")
