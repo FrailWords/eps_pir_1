@@ -11,7 +11,7 @@ class Server:
 
     # req is a dictionary mapping indexes to booleans of to include or not
     def make_req(self, req):
-        print("server", self.name, "recieved req:", req)
+        print("server", self.name, "received req:", req)
         output = 0
         for i in req:
             if req[i]:
@@ -41,13 +41,13 @@ class User:
 
 
 def main():
-    size = 1000
-    index = 10
+    size = 10
+    index = 5
 
     test_data = []
 
     for i in range(size):
-        test_data.append(random.randint(0, 100000))
+        test_data.append(random.randint(0, 10))
 
     s1 = Server(test_data, "S1")
     s2 = Server(test_data, "S2")
